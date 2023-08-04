@@ -1,7 +1,14 @@
 //your parameter variables go here!
-let rect_width  = 20;
-let rect_height = 20;
-
+let headX = 150;
+let headY = 140;
+let noseX = 110;
+let noseY = headY-20;
+let eyeOutline = 30
+let eyeSize = eyeOutline-5
+let pupilSize = 10
+let eyeY = headY-30
+let mouthY = noseY+10
+let earY = headY-100
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(DEVELOP_GLYPH);
@@ -21,16 +28,7 @@ function wallpaper_background() {
 
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
-let headX = 150;
-let headY = 140;
-let noseX = 110;
-let noseY = headY-20;
-let eyeOutline = 30
-let eyeSize = eyeOutline-10
-let pupilSize = 10
-let eyeY = headY-30
-let mouthY = noseY+10
-let earY = headY-100
+
 
   fill(255, 255, 255); //head
   noStroke();
@@ -69,21 +67,22 @@ let earY = headY-100
   vertex(170,earY);
   endShape();
 
-  beginShape(); //nose
-  vertex(noseX - 20,noseY);
-  vertex(noseX,noseY);
-  vertex(noseX + 10,noseY + 5);
-  vertex(noseX,noseY + 20);
-  vertex(noseX - 20,noseY + 20);
-  vertex(noseX - 30,noseY +5);
+beginShape(); //nose
+vertex(noseX - 20,noseY);
+ vertex(noseX,noseY);
+ vertex(noseX + 10,noseY + 5);
+ vertex(noseX,noseY + 20);
+ vertex(noseX - 20,noseY + 20);
+ vertex(noseX - 30,noseY +5);
   endShape();
 
 noFill(); //mouth
-strokeWeight(3)
-stroke(0)
-line(100,mouthY,90,mouthY+20);
-line(100,mouthY,110,mouthY+20);
-line(110,mouthY+20,90,mouthY+20);
+stroke(0);
+stroke(0,0,0);
+strokeWeight(2);
+bezier(110,mouthY,100,mouthY-10,100,mouthY+30,90,mouthY+20);
+bezier(90,mouthY,100,mouthY-10,100,mouthY+30,110,mouthY+20);
+
 
 noStroke()
  fill(0,0,0);

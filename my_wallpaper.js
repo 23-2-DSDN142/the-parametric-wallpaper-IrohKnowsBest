@@ -1,20 +1,20 @@
 //parameter variables
 let headX = 150;
 let headY = 140;
-let noseY = headY-20;
 let eyeOutline = 30;
-let eyeSize = eyeOutline-5;
-let pupilSize = 10;
-let eyeY = headY-30;
-let earY = headY-100;
+let eyeSize = eyeOutline-0;
+let pupilSize = 20;
 let isInvertedBamboo = true; // changes bamboo color
 let isInvertedBambooLine = true; //true, false changes bamboo line color
 let isInvertedBackground = true; //true, false changes the background color
-let numBamboo = 1; //0, 1, 2, 3 changes the background bamboo
+let numBamboo = 3; //0, 1, 2, 3 changes the background bamboo
 let isInvertedPandaHead = false; //true, false changes the color of the panda face
-let drawMultiplePandaHeads = 2; //0, 1, 2 changes the placement and amount of panda heads
+let drawMultiplePandaHeads = false; //false, 1, 2 changes the placement and amount of panda heads
  
 //parameter variables to stay the same
+let eyeY = headY-40;
+let earY = headY-100;
+let noseY = headY-40;
 let noseX = headX-40;
 let earX = headX-120;
 let eyeX = headX-80;
@@ -22,14 +22,14 @@ let mouthY = noseY+10;
 let mouthX = noseX-10;
 
 function setup_wallpaper(pWallpaper) {
-  pWallpaper.output_mode(GRID_WALLPAPER);
+  pWallpaper.output_mode(GLIDE_WALLPAPER);
   pWallpaper.resolution(FIT_TO_SCREEN);
   pWallpaper.show_guide(false);
 
   //Grid settings
   pWallpaper.grid_settings.cell_width  = 200;
   pWallpaper.grid_settings.cell_height = 200;
-  pWallpaper.grid_settings.row_offset  = 0;
+  pWallpaper.grid_settings.row_offset  = 60;
 }
 
 function wallpaper_background() {
@@ -70,6 +70,7 @@ function my_symbol() {
     DrawBamboo(120, true);
     DrawBamboo(170);
    }
+   
    if (drawMultiplePandaHeads == 1){
   scale(.5);
   DrawPandaHead(0,0);
@@ -82,13 +83,14 @@ function my_symbol() {
   DrawPandaHead(200,100);
   DrawPandaHead(100,300);
   DrawPandaHead(300,300);
-   } else {
-DrawPandaHead(headX,headY);
+   } else if (drawMultiplePandaHeads == false){
+  DrawPandaHead(headX,headY);
+
    }
 }
 function DrawBamboo(bambooX, isBambooYMoved){
   let bambooCurve = bambooX+10;
-   noStroke(0)
+   noStroke(0);
 
   if (isInvertedBamboo == true){
       fill(104,47,171);
@@ -109,6 +111,7 @@ function DrawBamboo(bambooX, isBambooYMoved){
   }else {
    stroke(198, 243, 144);
    noFill()
+   strokeWeight(1)
   }
   if (isBambooYMoved == true){
    bezier(bambooX-10,20,bambooX-10,20,bambooCurve-10,22,bambooX+10,20);
@@ -127,20 +130,16 @@ function DrawBamboo(bambooX, isBambooYMoved){
 }
 
 function DrawPandaHead(headX,headY){
- if (drawMultiplePandaHeads == 1, 2){
-  noseY = headY-10
-  eyeOutline = 30
-  eyeSize = eyeOutline-5
-  pupilSize = 10
-  eyeY = headY-30;
-  earY = headY-100;
-  noseY = headY-20
+  if (drawMultiplePandaHeads == 1, 2){
+  noseY = headY-30
+  eyeY = headY-40
+  earY = headY-100
   noseX = headX-40;
   earX = headX-120;
-  eyeX = headX-80;
-  mouthY = noseY+10;
-  mouthX = noseX-10;
-}
+  eyeX = headX-80;;
+  mouthY = headY-20;
+  mouthX = headX-50;
+  }
 //Head Shape
 if (isInvertedPandaHead == true){
   fill(0, 0, 0);

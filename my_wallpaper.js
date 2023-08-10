@@ -3,15 +3,26 @@ let headX = 150;
 let headY = 140;
 let noseY = headY-20;
 let eyeOutline = 30;
-let eyeSize = eyeOutline-5;
+let eyeSize = eyeOutline-10;
 let pupilSize = 10;
 let eyeY = headY-30;
 let earY = headY-100;
-let PandaHeadScale = 1
- 
+let isInvertedBamboo = false;
+let isInvertedBambooLine = false;
+let isInvertedBackground = false;
+let numBamboo = 2;
+let isInvertedPandaHead = false;
+let drawMultiplePandaHeads = true;
+
+  //Variables to stay the same
+  let noseX = headX-40;
+  let earX = headX-120;
+  let eyeX = headX-80;
+  let mouthY = noseY+10;
+  let mouthX = noseX-10;
 
 function setup_wallpaper(pWallpaper) {
-  pWallpaper.output_mode(DEVELOP_GLYPH);
+  pWallpaper.output_mode(GRID_WALLPAPER);
   pWallpaper.resolution(FIT_TO_SCREEN);
   pWallpaper.show_guide(true); //set this to false when you're ready to print
 
@@ -22,85 +33,108 @@ function setup_wallpaper(pWallpaper) {
 }
 
 function wallpaper_background() {
-  background(153, 255, 204); //light honeydew green colour
-}
+  if (isInvertedBackground == true){
+    background(102,0,51); 
+   } else {
+  background(153, 255,204);
+   }
+   }
 
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
 
-DrawBamboo1(0);
-DrawBamboo2(40);
-DrawBamboo1(80);
-DrawBamboo2(120);
-DrawBamboo1(160);
-DrawBamboo2(200);
-
-DrawPandaHead(headX,headY)();
+  if (numBamboo == 1){
+    DrawBamboo(20);
+    DrawBamboo(60, true);
+    DrawBamboo(100);
+    DrawBamboo(140, true);
+    DrawBamboo(180);
+  }else if (numBamboo == 2){
+    DrawBamboo(0, true);
+    DrawBamboo(35);
+    DrawBamboo(70, true);
+    DrawBamboo(100);
+    DrawBamboo(130, true);
+    DrawBamboo(165);
+    DrawBamboo(200, true);
+  }else if (numBamboo == 3){
+    DrawBamboo(10);
+    DrawBamboo(40, true);
+    DrawBamboo(60);
+    DrawBamboo(90, true);
+    DrawBamboo(110);
+    DrawBamboo(140, true);
+    DrawBamboo(160);
+    DrawBamboo(190, true);
+  }else{
+    DrawBamboo(20, true);
+    DrawBamboo(70);
+    DrawBamboo(120, true);
+    DrawBamboo(170);
 }
-function DrawBamboo1(bambooMove){
+if (drawMultiplePandaHeads == true){
+  scale(1)
+  DrawPandaHead(100,100);
+  DrawPandaHead(200,200);
+} else {
+DrawPandaHead(headX,headY);
+}
+}
+function DrawBamboo(bambooX, isBambooYMoved){
   //parameters to stay the same
-  let bambooCurve = bambooMove+10;
-  
+    let bambooCurve = bambooX+10;
     noStroke(0)
-    fill(151, 208, 84); //Bamboo
+
+    if (isInvertedBamboo == true){
+      fill(104,47,171);
+    } else {
+      fill(151, 208, 84);
+    }
+
+     //Bamboo
     beginShape();
-    vertex(bambooMove-10,0);
-    vertex(bambooMove+10,0);
-    vertex(bambooMove+10,200);
-    vertex(bambooMove-10,200);
+    vertex(bambooX-10,0);
+    vertex(bambooX+10,0);
+    vertex(bambooX+10,200);
+    vertex(bambooX-10,200);
     endShape();
-  
-    stroke(198, 243, 144);
-    noFill()
-   bezier(bambooMove-10,0,bambooMove-10,0,bambooCurve-10,2,bambooMove+10,0);
-   bezier(bambooMove-10,40,bambooMove-10,40,bambooCurve-10,42,bambooMove+10,40);
-   bezier(bambooMove-10,80,bambooMove-10,80,bambooCurve-10,82,bambooMove+10,80);
-   bezier(bambooMove-10,120,bambooMove-10,120,bambooCurve-10,122,bambooMove+10,120);
-   bezier(bambooMove-10,160,bambooMove-10,160,bambooCurve-10,162,bambooMove+10,160);
-   bezier(bambooMove-10,200,bambooMove-10,200,bambooCurve-10,202,bambooMove+10,200);
-  
+
+    if (isInvertedBambooLine == true){
+      stroke(57,12,111);
+      noFill()
+    }else {
+      stroke(198, 243, 144);
+      noFill()
+    }
+    
+
+    if (isBambooYMoved == true){
+      bezier(bambooX-10,20,bambooX-10,20,bambooCurve-10,22,bambooX+10,20);
+      bezier(bambooX-10,60,bambooX-10,60,bambooCurve-10,62,bambooX+10,60);
+      bezier(bambooX-10,100,bambooX-10,100,bambooCurve-10,102,bambooX+10,100);
+      bezier(bambooX-10,140,bambooX-10,140,bambooCurve-10,142,bambooX+10,140);
+      bezier(bambooX-10,180,bambooX-10,180,bambooCurve-10,182,bambooX+10,180);   
+    } else {
+      bezier(bambooX-10,0,bambooX-10,0,bambooCurve-10,2,bambooX+10,0);
+      bezier(bambooX-10,40,bambooX-10,40,bambooCurve-10,42,bambooX+10,40);
+      bezier(bambooX-10,80,bambooX-10,80,bambooCurve-10,82,bambooX+10,80);
+      bezier(bambooX-10,120,bambooX-10,120,bambooCurve-10,122,bambooX+10,120);
+      bezier(bambooX-10,160,bambooX-10,160,bambooCurve-10,162,bambooX+10,160);
+      bezier(bambooX-10,200,bambooX-10,200,bambooCurve-10,202,bambooX+10,200)   
+    }
+
   }
 
-function DrawBamboo2(bambooMove){
-  let bambooCurve = bambooMove+10;
-  
-    noStroke(0)
-    fill(151, 208, 84); //Bamboo
-    beginShape();
-    vertex(bambooMove-10,0);
-    vertex(bambooMove+10,0);
-    vertex(bambooMove+10,200);
-    vertex(bambooMove-10,200);
-    endShape();
-  
-    stroke(198, 243, 144);
-    noFill()
-   bezier(bambooMove-10,20,bambooMove-10,20,bambooCurve-10,22,bambooMove+10,20);
-   bezier(bambooMove-10,60,bambooMove-10,60,bambooCurve-10,62,bambooMove+10,60);
-   bezier(bambooMove-10,100,bambooMove-10,100,bambooCurve-10,102,bambooMove+10,100);
-   bezier(bambooMove-10,140,bambooMove-10,140,bambooCurve-10,142,bambooMove+10,140);
-   bezier(bambooMove-10,180,bambooMove-10,180,bambooCurve-10,182,bambooMove+10,180);
- 
-}
-
 function DrawPandaHead(headX,headY){
- scale(PandaHeadScale);
- noseY;
- eyeOutline;
- eyeSize;
- pupilSize;
- eyeY;
- earY;
 
-  //Variables to stay the same
-  let noseX = headX-40;
-  let earX = headX-120;
-  let eyeX = headX-80;
-  let mouthY = noseY+10;
-  let mouthX = noseX-10;
+  if (isInvertedPandaHead == true){
+    fill(0, 0, 0); //head
+    noStroke();
+  } else{
+    fill(255, 255, 255); //head
+    noStroke();
+  }
 
-fill(255, 255, 255); //head
-noStroke();
 beginShape();
 vertex(headX-80, headY-90);
 vertex(headX-20, headY-90);
@@ -112,8 +146,14 @@ vertex(headX-120,headY);
 vertex(headX-125,headY-50);
 endShape();
 
-fill(0,0,0); //left ear
-noStroke();
+if (isInvertedPandaHead == true){
+  fill(255, 255, 255);
+  noStroke();
+} else{
+  fill(0, 0, 0);
+  noStroke();
+}
+
 beginShape();
 vertex(earX+30,earY);
 vertex(earX,earY);
@@ -123,8 +163,6 @@ vertex(earX+30,earY+40);
 vertex(earX+40,earY+20);
 endShape();
 
-fill(0,0,0); //Right ear
-noStroke();
 beginShape();
 vertex(earX+110,earY+30);
 vertex(earX+140,earY);
@@ -145,28 +183,64 @@ vertex(noseX-20,noseY+20);
 vertex(noseX-30,noseY+5);
 endShape();
 
-noFill(); //mouth
-stroke(0);
-stroke(0,0,0);
-strokeWeight(2);
+if (isInvertedPandaHead == true){
+  noFill(); //mouth
+  stroke(255,255,255);
+  strokeWeight(2);
+} else{
+  noFill();
+  stroke(0,0,0);
+  strokeWeight(2);
+}
+
 bezier(mouthX+10,mouthY,mouthX,mouthY-10,mouthX,mouthY+30,mouthX-10,mouthY+20);
 bezier(mouthX-10,mouthY,mouthX,mouthY-10,mouthX,mouthY+30,mouthX+10,mouthY+20);
 
-
-noStroke()
-fill(0,0,0);
+if (isInvertedPandaHead == true){
+  noStroke()
+  fill(255,255,255);
+} else{
+  noStroke()
+  fill(0,0,0);
+}
 ellipse(eyeX-4,eyeY,eyeOutline,eyeOutline); //Left eye
-fill(255,255,255);
+if (isInvertedPandaHead == true){
+  fill(0,0,0);
+} else{
+  fill(255,255,255);
+}
 ellipse(eyeX,eyeY,eyeSize,eyeSize-5);
-fill(0,0,0);
+if (isInvertedPandaHead == true){
+  fill(255,255,255);
+} else{
+  fill(0,0,0);
+}
 ellipse(eyeX,eyeY,pupilSize,pupilSize);
 
-fill(0,0,0); //Right eye
+if (isInvertedPandaHead == true){
+  noStroke()
+  fill(255,255,255);
+} else{
+  noStroke()
+  fill(0,0,0);
+}
+//Right eye
 ellipse(eyeX+64,eyeY,eyeOutline,eyeOutline);
-fill(255,255,255);
+if (isInvertedPandaHead == true){
+  noStroke()
+  fill(0,0,0);
+} else{
+  noStroke()
+  fill(255,255,255);
+}
 ellipse(eyeX+60,eyeY,eyeSize,eyeSize-5);
-fill(0,0,0);
+if (isInvertedPandaHead == true){
+  noStroke()
+  fill(255,255,255);
+} else{
+  noStroke()
+  fill(0,0,0);
+}
 ellipse(eyeX+60,eyeY,pupilSize,pupilSize);
-
 }
 

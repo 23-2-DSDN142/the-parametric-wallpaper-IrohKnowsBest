@@ -1,53 +1,338 @@
-You will need to fill out this file for hand in. 
-The bellow is just an example, feel free to disregard this documents contents.
-
-
-Your final settings.txt will look something like this when you are finished:
-
-/////////////////////////////////
 
 Wallpaper 1:
 
-//your parameter variables go here!
-let rect_width  = 20;
-let rect_height = 20;
-let paramter1 = 10;
-let paramter2 = true;
-let paramter3 = 50; 
-let paramter4 = 0; 
-let paramter5 = 60;
+let headX = 150;
+let headY = 140;
+let eyeOutline = 30;
+let eyeSize = eyeOutline-5;
+let pupilSize = 10;
+let isInvertedBamboo = false; // changes bamboo color
+let isInvertedBambooLine = false; //true, false changes bamboo line color
+let isInvertedBackground = false; //true, false changes the background color
+let numBamboo = 2; //0, 1, 2, 3 changes the background bamboo
+let isInvertedPandaHead = false; //true, false changes the color of the panda face
+let drawMultiplePandaHeads = false; //false, 1, 2 changes the placement and amount of panda heads
+ 
+//parameter variables to stay the same
+let eyeY = headY-40;
+let earY = headY-100;
+let noseY = headY-40;
+let noseX = headX-40;
+let earX = headX-120;
+let eyeX = headX-80;
+let mouthY = noseY+10;
+let mouthX = noseX-10;
 
 function setup_wallpaper(pWallpaper) {
-  pWallpaper.output_mode(GRID_WALLPAPER);
-  pWallpaper.resolution(NINE_LANDSCAPE);
-  pWallpaper.show_guide(false); //set this to false when you're ready to print
+  pWallpaper.output_mode(GLIDE_WALLPAPER);
+  pWallpaper.resolution(NINE_PORTRAIT);
+  pWallpaper.show_guide(false);
 
   //Grid settings
-  pWallpaper.grid_settings.cell_width  = 100;
-  pWallpaper.grid_settings.cell_height = 100;
-  pWallpaper.grid_settings.row_offset  = 50;
+  pWallpaper.grid_settings.cell_width  = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset  = 100;
 }
 
 /////////////////////////////////
 
 Wallpaper 2:
 
-//your parameter variables go here!
-let rect_width  = 10;
-let rect_height = 10;
-let paramter1 = 20;
-let paramter2 = false;
-let paramter3 = 50; 
-let paramter4 = 80; 
-let paramter5 = 30;
+let headX = 150;
+let headY = 140;
+let eyeOutline = 0;
+let eyeSize = eyeOutline-5;
+let pupilSize = 10;
+let isInvertedBamboo = false; // changes bamboo color
+let isInvertedBambooLine = false; //true, false changes bamboo line color
+let isInvertedBackground = false; //true, false changes the background color
+let numBamboo = 3; //0, 1, 2, 3 changes the background bamboo
+let isInvertedPandaHead = false; //true, false changes the color of the panda face
+let drawMultiplePandaHeads = false; //false, 1, 2 changes the placement and amount of panda heads
+ 
+//parameter variables to stay the same
+let eyeY = headY-40;
+let earY = headY-100;
+let noseY = headY-40;
+let noseX = headX-40;
+let earX = headX-120;
+let eyeX = headX-80;
+let mouthY = noseY+10;
+let mouthX = noseX-10;
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GLIDE_WALLPAPER);
+  pWallpaper.resolution(NINE_PORTRAIT);
+  pWallpaper.show_guide(false);
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width  = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset  = 140;
+}
+
+/////////////////////////////////////
+
+Wallpaper 3:
+
+//parameter variables
+let headX = 150;
+let headY = 140;
+let eyeOutline = 30;
+let eyeSize = eyeOutline-0;
+let pupilSize = 20;
+let isInvertedBamboo = true; // changes bamboo color
+let isInvertedBambooLine = true; //true, false changes bamboo line color
+let isInvertedBackground = true; //true, false changes the background color
+let numBamboo = 3; //0, 1, 2, 3 changes the background bamboo
+let isInvertedPandaHead = false; //true, false changes the color of the panda face
+let drawMultiplePandaHeads = false; //false, 1, 2 changes the placement and amount of panda heads
+ 
+//parameter variables to stay the same
+let eyeY = headY-40;
+let earY = headY-100;
+let noseY = headY-40;
+let noseX = headX-40;
+let earX = headX-120;
+let eyeX = headX-80;
+let mouthY = noseY+10;
+let mouthX = noseX-10;
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GLIDE_WALLPAPER);
+  pWallpaper.resolution(NINE_PORTRAIT);
+  pWallpaper.show_guide(false);
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width  = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset  = 60;
+}
+
+
+///////////////////////////////////////////////
+
+Wallpaper 4:
+
+//parameter variables
+let headX = 150;
+let headY = 140;
+let eyeOutline = 20;
+let eyeSize = eyeOutline-0;
+let pupilSize = 10;
+let isInvertedBamboo = true; // changes bamboo color
+let isInvertedBambooLine = true; //true, false changes bamboo line color
+let isInvertedBackground = true; //true, false changes the background color
+let numBamboo = 0; //0, 1, 2, 3 changes the background bamboo
+let isInvertedPandaHead = false; //true, false changes the color of the panda face
+let drawMultiplePandaHeads = false; //false, 1, 2 changes the placement and amount of panda heads
+ 
+//parameter variables to stay the same
+let eyeY = headY-40;
+let earY = headY-100;
+let noseY = headY-40;
+let noseX = headX-40;
+let earX = headX-120;
+let eyeX = headX-80;
+let mouthY = noseY+10;
+let mouthX = noseX-10;
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GLIDE_WALLPAPER);
+  pWallpaper.resolution(NINE_PORTRAIT);
+  pWallpaper.show_guide(false);
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width  = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset  = 100;
+}
+
+/////////////////////////////////////////////////
+
+Wallpaper 5:
+
+let headX = 150;
+let headY = 140;
+let eyeOutline = 30;
+let eyeSize = eyeOutline-5;
+let pupilSize = 10;
+let isInvertedBamboo = false; // changes bamboo color
+let isInvertedBambooLine = false; //true, false changes bamboo line color
+let isInvertedBackground = false; //true, false changes the background color
+let numBamboo = 1; //0, 1, 2, 3 changes the background bamboo
+let isInvertedPandaHead = false; //true, false changes the color of the panda face
+let drawMultiplePandaHeads = 2; //false, 1, 2 changes the placement and amount of panda heads
+ 
+//parameter variables to stay the same
+let eyeY = headY-40;
+let earY = headY-100;
+let noseY = headY-40;
+let noseX = headX-40;
+let earX = headX-120;
+let eyeX = headX-80;
+let mouthY = noseY+10;
+let mouthX = noseX-10;
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(GRID_WALLPAPER);
-  pWallpaper.resolution(NINE_LANDSCAPE);
-  pWallpaper.show_guide(false); //set this to false when you're ready to print
+  pWallpaper.resolution(NINE_PORTRAIT);
+  pWallpaper.show_guide(false);
 
   //Grid settings
-  pWallpaper.grid_settings.cell_width  = 100;
-  pWallpaper.grid_settings.cell_height = 100;
+  pWallpaper.grid_settings.cell_width  = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset  = 0;
+}
+
+//////////////////////////////////////////////////
+
+Wallpaper 6:
+
+//parameter variables
+let headX = 150;
+let headY = 140;
+let eyeOutline = 30;
+let eyeSize = eyeOutline-5;
+let pupilSize = 10;
+let isInvertedBamboo = false; // changes bamboo color
+let isInvertedBambooLine = false; //true, false changes bamboo line color
+let isInvertedBackground = false; //true, false changes the background color
+let numBamboo = 2; //0, 1, 2, 3 changes the background bamboo
+let isInvertedPandaHead = false; //true, false changes the color of the panda face
+let drawMultiplePandaHeads = 1; //false, 1, 2 changes the placement and amount of panda heads
+ 
+//parameter variables to stay the same
+let eyeY = headY-40;
+let earY = headY-100;
+let noseY = headY-40;
+let noseX = headX-40;
+let earX = headX-120;
+let eyeX = headX-80;
+let mouthY = noseY+10;
+let mouthX = noseX-10;
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GRID_WALLPAPER);
+  pWallpaper.resolution(NINE_PORTRAIT);
+  pWallpaper.show_guide(false);
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width  = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset  = 0;
+}
+
+////////////////////////////////////////////////////
+
+Wallpaper 7:
+
+//parameter variables
+let headX = 150;
+let headY = 140;
+let eyeOutline = 20;
+let eyeSize = eyeOutline-0;
+let pupilSize = 10;
+let isInvertedBamboo = true; // changes bamboo color
+let isInvertedBambooLine = true; //true, false changes bamboo line color
+let isInvertedBackground = true; //true, false changes the background color
+let numBamboo = 0; //0, 1, 2, 3 changes the background bamboo
+let isInvertedPandaHead = false; //true, false changes the color of the panda face
+let drawMultiplePandaHeads = 1; //false, 1, 2 changes the placement and amount of panda heads
+ 
+//parameter variables to stay the same
+let eyeY = headY-40;
+let earY = headY-100;
+let noseY = headY-40;
+let noseX = headX-40;
+let earX = headX-120;
+let eyeX = headX-80;
+let mouthY = noseY+10;
+let mouthX = noseX-10;
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GRID_WALLPAPER);
+  pWallpaper.resolution(NINE_PORTRAIT);
+  pWallpaper.show_guide(false);
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width  = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset  = 0;
+}
+
+/////////////////////////////////////////////////////
+
+Wallpaper 8:
+
+//parameter variables
+let headX = 150;
+let headY = 140;
+let eyeOutline = 30;
+let eyeSize = eyeOutline-0;
+let pupilSize = 20;
+let isInvertedBamboo = false; // changes bamboo color
+let isInvertedBambooLine = false; //true, false changes bamboo line color
+let isInvertedBackground = false; //true, false changes the background color
+let numBamboo = 2; //0, 1, 2, 3 changes the background bamboo
+let isInvertedPandaHead = true; //true, false changes the color of the panda face
+let drawMultiplePandaHeads = false; //false, 1, 2 changes the placement and amount of panda heads
+ 
+//parameter variables to stay the same
+let eyeY = headY-40;
+let earY = headY-100;
+let noseY = headY-40;
+let noseX = headX-40;
+let earX = headX-120;
+let eyeX = headX-80;
+let mouthY = noseY+10;
+let mouthX = noseX-10;
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GLIDE_WALLPAPER);
+  pWallpaper.resolution(NINE_PORTRAIT);
+  pWallpaper.show_guide(false);
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width  = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset  = 60;
+}
+
+//////////////////////////////////////////////////////
+
+Wallpaper 9:
+
+//parameter variables
+let headX = 150;
+let headY = 140;
+let eyeOutline = 30;
+let eyeSize = eyeOutline-0;
+let pupilSize = 20;
+let isInvertedBamboo = true; // changes bamboo color
+let isInvertedBambooLine = true; //true, false changes bamboo line color
+let isInvertedBackground = true; //true, false changes the background color
+let numBamboo = 0; //0, 1, 2, 3 changes the background bamboo
+let isInvertedPandaHead = true; //true, false changes the color of the panda face
+let drawMultiplePandaHeads = 2; //false, 1, 2 changes the placement and amount of panda heads
+ 
+//parameter variables to stay the same
+let eyeY = headY-40;
+let earY = headY-100;
+let noseY = headY-40;
+let noseX = headX-40;
+let earX = headX-120;
+let eyeX = headX-80;
+let mouthY = noseY+10;
+let mouthX = noseX-10;
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GRID_WALLPAPER);
+  pWallpaper.resolution(NINE_PORTRAIT);
+  pWallpaper.show_guide(false);
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width  = 200;
+  pWallpaper.grid_settings.cell_height = 200;
   pWallpaper.grid_settings.row_offset  = 0;
 }
